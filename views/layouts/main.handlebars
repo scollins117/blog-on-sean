@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>You shouldn't have messed with the internet</title>
+  <title>Sean's Tech Blog</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
@@ -12,20 +12,27 @@
   <div class="wrapper">
     <header>
       <h1>
-      <a href="/">Whats begun cannot be undone</a>
+        <a href="/">Sean's Tech Blog</a>
       </h1>
       <nav>
+        {{#if loggedIn}}
+        <button id="logout" class="btn-no-style">logout</button>
+        {{else}}
         <a href="/login">login</a>
+        {{/if}}
       </nav>
     </header>
     <main>
       {{{ body }}}
     </main>
     <footer>
-      You will live to regret this
+      Thanks for visiting!
     </footer>
   </div>
-
+  
+  {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+  {{/if}}
 </body>
 
 </html>
